@@ -20,4 +20,20 @@ public class Paragraph implements IElement{
     public void print() {
         System.out.println("Paragraph: " + this.text);
     }
+
+    @Override
+    public void add(IElement element) {
+        System.out.println("Cannot add element to paragraph");
+    }
+
+    @Override
+    public void remove(IElement element) {
+        System.out.println("Cannot remove element from paragraph");
+    }
+
+    @Override
+    public IElement getElement(int index) {
+        System.out.println("Cannot get element from paragraph");
+        return null;
+    }
 }

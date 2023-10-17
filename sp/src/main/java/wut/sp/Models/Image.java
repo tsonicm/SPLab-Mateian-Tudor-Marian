@@ -20,4 +20,20 @@ public class Image implements IElement{
     public void print() {
         System.out.println("Image with name: " + this.name);
     }
+
+    @Override
+    public void add(IElement element) {
+        System.out.println("Cannot add element to image");
+    }
+
+    @Override
+    public void remove(IElement element) {
+        System.out.println("Cannot remove element from image");
+    }
+
+    @Override
+    public IElement getElement(int index) {
+        System.out.println("Cannot get element from image");
+        return null;
+    }
 }

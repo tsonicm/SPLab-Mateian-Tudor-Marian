@@ -3,10 +3,12 @@ package wut.sp.Models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book {
+import wut.sp.Interfaces.IElement;
+
+public class Book extends Section{
     private String title;
     private List<Author> authors;
-    private List<Chapter> chapters;
+    private List<IElement> sections;
 
     public Book() {
     }
@@ -14,29 +16,22 @@ public class Book {
     public Book(String title) {
         this.title = title;
         this.authors = new ArrayList<Author>();
+        this.sections = new ArrayList<IElement>();
     }
 
     public Book(String title, Author author) {
         this.title = title;
         this.authors = new ArrayList<Author>();
         this.authors.add(author);
+        this.sections = new ArrayList<IElement>();
     }
 
     public void addAuthor(Author author) {
         this.authors.add(author);
     }
 
-    public int createChapter(String string) {
-        Chapter chapter = new Chapter(string);
-        if (this.chapters == null) {
-            this.chapters = new ArrayList<Chapter>();
-        }
-        this.chapters.add(chapter);
-        return this.chapters.indexOf(chapter);
-    }
-
-    public Chapter getChapter(int indexChapterOne) {
-        return this.chapters.get(indexChapterOne);
+    public void addContent(IElement element) {
+        this.sections.add(element);
     }
 
     public String getTitle() {
@@ -45,13 +40,13 @@ public class Book {
 
     public void print() {
         System.out.println("Book: " + this.title);
-        System.out.println("Authors: ");
+        System.out.println("\nAuthors:");
         for (Author author : this.authors) {
-            System.out.println(author.getName());
+            author.print();
         }
-        System.out.println("Chapters: ");
-        for (Chapter chapter : this.chapters) {
-            System.out.println(chapter.getName());
+        System.out.println();
+        for (IElement section : this.sections) {
+            section.print();
         }
     }
 }
