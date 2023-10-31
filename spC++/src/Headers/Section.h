@@ -6,6 +6,6 @@ protected:
 public:
     Section(std::string title);
     Section(Section* section);
-    void print();
-    IElement *clone();
+    void print() override;
+    IElement *clone() override;
 };

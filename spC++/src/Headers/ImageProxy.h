@@ -11,11 +11,3 @@ public:
     ImageProxy(/* args */);
     ~ImageProxy();
 };
-
-ImageProxy::ImageProxy(/* args */)
-{
-}
-
-ImageProxy::~ImageProxy()
-{
-}

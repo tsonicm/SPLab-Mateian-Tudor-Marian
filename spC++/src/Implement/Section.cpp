@@ -1,4 +1,5 @@
 #include "../Headers/Section.h"
+#include "../Headers/Paragraph.h"
 
 Section::Section(std::string title) {
     this->title = title;
@@ -17,6 +18,6 @@ void Section::print() {
     }
 }
 
-IElement *Section::clone() {
+IElement* Section::clone() {
     return new Section(this);
 }

@@ -1,5 +1,4 @@
 #include "AlignStrategy.h"
-#include <iostream>
 
 class AlignLeft : public AlignStrategy {
 public:

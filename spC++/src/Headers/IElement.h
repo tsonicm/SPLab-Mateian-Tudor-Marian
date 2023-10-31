@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <list>
-
+#pragma once
 class IElement {
 protected:
     std::list<IElement*> children;

@@ -9,7 +9,7 @@ private:
 public:
     Image(std::string url);
     Image(Image* image);
-    void print();
-    IElement *clone();
+    void print() override;
+    IElement *clone() override;
     std::string getUrl();
 };

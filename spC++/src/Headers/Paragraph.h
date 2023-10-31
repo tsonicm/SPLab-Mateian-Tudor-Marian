@@ -1,13 +1,15 @@
 #include "IElement.h"
 #include "AlignStrategy.h"
+#pragma once
 
 class Paragraph : public IElement {
 private:
-    const std::string text;
+    std::string text;
     AlignStrategy *alignStrategy;
 public:
     Paragraph(std::string text);
     Paragraph(Paragraph* paragraph);
-    void print();
-    IElement *clone();
+    void print() override;
+    IElement *clone() override;
+    void setAlignStrategy(AlignStrategy *alignStrategy);
 };
