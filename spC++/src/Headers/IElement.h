@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <list>
+#include "IVisitor.h"
+
 #pragma once
 class IElement {
 protected:
@@ -13,4 +15,10 @@ public:
     void remove(IElement* element);
     std::list<IElement*> get(int index);
     virtual ~IElement() {}
+    void *accept(IElement *visitee);
+};
+
+class IVisitee {
+public:
+    virtual void accept(IVisitor* visitor) = 0;
 };

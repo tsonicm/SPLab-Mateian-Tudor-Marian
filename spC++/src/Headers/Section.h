@@ -8,4 +8,5 @@ public:
     Section(Section* section);
     void print() override;
     IElement *clone() override;
+    IElement *accept(IElement* visitee) override;
 };

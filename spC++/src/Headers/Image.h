@@ -1,7 +1,7 @@
 #include "IElement.h"
-#include "Picture.h"
+#include "IPicture.h"
 
-class Image: public IElement, public Picture {
+class Image: public IElement, public IPicture {
 private:
     std::string url;
     std::string imgContent;

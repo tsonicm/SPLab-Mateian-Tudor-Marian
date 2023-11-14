@@ -1,5 +1,6 @@
 #include "../Headers/Section.h"
 #include "../Headers/Paragraph.h"
+#include "../Headers/IVisitor.h"
 
 Section::Section(std::string title) {
     this->title = title;
@@ -20,4 +21,8 @@ void Section::print() {
 
 IElement* Section::clone() {
     return new Section(this);
+}
+
+void Section::accept(IElement* visitee) {
+    visitee->visit(this);
 }

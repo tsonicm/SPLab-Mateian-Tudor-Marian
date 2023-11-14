@@ -15,3 +15,7 @@ std::list<IElement*> IElement::get(int index) {
     }
     return result;
 }
+
+void *IElement::accept(IElement *visitee) {
+    return visitee->accept(this);
+}

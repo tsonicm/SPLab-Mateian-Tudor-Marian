@@ -1,13 +1,18 @@
 #include "IElement.h"
-#include "Picture.h"
+#include "IPicture.h"
 #include "Image.h"
 
-class ImageProxy : public IElement, public Picture
+class ImageProxy : public IElement, public IPicture
 {
 private:
     Image *image;
     std::string url;
 public:
-    ImageProxy(/* args */);
+    ImageProxy(std::string url);
+    ImageProxy(ImageProxy* imageProxy);
+    void print() override;
+    IElement *clone() override;
+    std::string getUrl();
     ~ImageProxy();
+    Image loadImage();
 };

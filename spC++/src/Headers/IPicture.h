@@ -1,6 +1,6 @@
 #include <string>
 
-class Picture {
+class IPicture {
     public:
         virtual std::string getUrl() = 0;
 };
