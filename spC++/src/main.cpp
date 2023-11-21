@@ -1,26 +1,30 @@
-#include "Implement/Section.cpp"
-#include "Implement/Author.cpp"
-#include "Implement/Paragraph.cpp"
-#include "Implement/IElement.cpp"
+#include "Implement/Models/IElement.cpp"
+#include "Implement/Services/RenderContentVisitor.cpp"
+#include "Implement/Services/TableOfContentsUpdate.cpp"
+#include "Implement/Services/Align.cpp"
 
 
 int main() {
+    Book b = new Book("The book");
     Section cap1 = new Section("Chapter 1");
-    Paragraph* p1 = new Paragraph("Paragraph 1");
-    cap1.add(p1);
-    Paragraph* p2 = new Paragraph("Paragraph 2");
-    cap1.add(p2);
-    Paragraph* p3 = new Paragraph("Paragraph 3");
-    cap1.add(p3);
-    Paragraph* p4 = new Paragraph("Paragraph 4");
-    cap1.add(p4);
-    std::cout << "Print w/o alignment" << std::endl << std::endl;
-    cap1.print();
-    
-    std::cout << std::endl << "Print with alignment" << std::endl << std::endl;
-    p1->setAlignStrategy(new AlignCenter());
-    p2->setAlignStrategy(new AlignRight());
-    p3->setAlignStrategy(new AlignLeft());
+    Section cap11 = new Section("Subchapter 1.1");
+    Section cap2 = new Section("Chapter 2");
+    cap1.add(new Paragraph("Paragraph 1"));
+    cap1.add(new Paragraph("Paragraph 2"));
+    cap1.add(new Paragraph("Paragraph 3"));
 
-    cap1.print();
+    cap11.add(new ImageProxy("ImageOne"));
+    cap11.add(new Image("ImageTwo"));
+
+    cap2.add(new Paragraph("Paragraph 4"));
+//        cap2.add(p4);
+    cap1.add(&cap11);
+    cap1.add(new Paragraph("Some text"));
+    cap1.add(new Table("Table 1"));
+    b.add(&cap1);
+    b.add(&cap2);
+
+    TableOfContentsUpdate* tocUpdate = new TableOfContentsUpdate();
+    b.accept(tocUpdate);
+    tocUpdate->getToC().accept(new RenderContentVisitor());
 }

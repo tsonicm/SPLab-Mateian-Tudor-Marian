@@ -1,4 +1,6 @@
-#include "AlignStrategy.h"
+#pragma once
+
+#include "AlignStrategy.hpp"
 
 class AlignLeft : public AlignStrategy {
 public:
