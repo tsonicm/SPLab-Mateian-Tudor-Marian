@@ -37,6 +37,13 @@ public class Section extends Element{
         return elementList.get(index);
     }
 
+    public void accept(IVisitor visitor) {
+        visitor.visitSection(this);
+        for (Element element : this.elementList) {
+            element.accept(visitor);
+        }
+    }
+
     public void print() {
         System.out.println("Section: " + this.title);
 

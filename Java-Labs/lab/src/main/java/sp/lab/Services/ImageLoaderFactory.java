@@ -1,4 +1,6 @@
-package sp.lab.Models.Image;
+package sp.lab.Services;
+
+import sp.lab.Models.ImageContent;
 
 public class ImageLoaderFactory {
     private IImageLoader imageLoader;

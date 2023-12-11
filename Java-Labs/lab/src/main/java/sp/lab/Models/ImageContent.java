@@ -1,4 +1,4 @@
-package sp.lab.Models.Image;
+package sp.lab.Models;
 
 public class ImageContent {
     private String content;

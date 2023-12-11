@@ -13,4 +13,5 @@ public abstract class Element {
     void add(Element element) throws Exception {}
     void remove(Element element) {}
     Element get(int index) {return null;}
+    abstract void accept(IVisitor visitor);
 }

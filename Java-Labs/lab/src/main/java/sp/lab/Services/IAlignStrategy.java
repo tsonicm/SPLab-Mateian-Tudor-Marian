@@ -1,4 +1,4 @@
-package sp.lab.Models.Paragraph;
+package sp.lab.Services;
 
 public interface IAlignStrategy {
     void render(String content);

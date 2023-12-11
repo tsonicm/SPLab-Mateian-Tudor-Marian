@@ -1,4 +1,4 @@
-package sp.lab.Models.Image;
+package sp.lab.Models;
 
 import lombok.Getter;
 
