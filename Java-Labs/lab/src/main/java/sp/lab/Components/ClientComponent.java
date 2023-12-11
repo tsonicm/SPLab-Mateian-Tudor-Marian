@@ -1,7 +1,9 @@
 package sp.lab.Components;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ClientComponent {
     private final TransientComponent transientComponent;
     private final SingletonComponent singletonComponent;
