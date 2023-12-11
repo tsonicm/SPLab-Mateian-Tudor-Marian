@@ -1,4 +1,4 @@
-package sp.lab.Models;
+package sp.lab.Models.Image;
 
 public interface IPicture {
     

@@ -1,6 +1,8 @@
-package sp.lab.Models;
+package sp.lab.Models.Image;
 
 import java.util.concurrent.TimeUnit;
+
+import sp.lab.Models.Element;
 
 public class Image extends Element implements IPicture{
     private String name;
@@ -13,7 +15,7 @@ public class Image extends Element implements IPicture{
             e.printStackTrace();
         }
     }
-
+    
     public void print() {
         System.out.println("Image with name: " + this.name);
     }
