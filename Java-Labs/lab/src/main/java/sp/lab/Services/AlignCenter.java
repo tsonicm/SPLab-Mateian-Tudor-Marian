@@ -1,4 +1,4 @@
-package sp.lab.Models.Paragraph;
+package sp.lab.Services;
 
 public class AlignCenter implements IAlignStrategy{
     public void render(String content) {

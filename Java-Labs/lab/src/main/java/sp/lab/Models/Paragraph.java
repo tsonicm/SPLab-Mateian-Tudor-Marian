@@ -1,8 +1,10 @@
-package sp.lab.Models.Paragraph;
+package sp.lab.Models;
 
-import sp.lab.Models.Element;
+import lombok.Getter;
+import sp.lab.Services.IAlignStrategy;
 
 public class Paragraph extends Element{
+    @Getter
     private String text;
     private IAlignStrategy alignStrategy;
 
@@ -13,6 +15,10 @@ public class Paragraph extends Element{
 
     public void setAlignStrategy(IAlignStrategy alignStrategy) {
         this.alignStrategy = alignStrategy;
+    }
+
+    public void accept(IVisitor visitor) {
+        visitor.visitParagraph(this);
     }
 
     public void print() {

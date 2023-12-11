@@ -23,6 +23,13 @@ public class Book extends Section {
         }
     }
 
+    public void accept(IVisitor visitor) {
+        visitor.visitBook(this);
+        for (Element element : super.elementList) {
+            element.accept(visitor);
+        }
+    }
+
     public void print() {
         System.out.println("Book: " + this.getTitle() + '\n');
 
