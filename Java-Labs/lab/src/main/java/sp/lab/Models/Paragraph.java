@@ -1,6 +1,6 @@
 package sp.lab.Models;
 
-public class Paragraph implements IElement{
+public class Paragraph extends Element{
     private String text;
 
     public Paragraph(String text) {
@@ -9,9 +9,5 @@ public class Paragraph implements IElement{
 
     public void print() {
         System.out.println("Paragraph: " + this.text);
-    }
-
-    public int getIndex() {
-        return 1;
     }
 }

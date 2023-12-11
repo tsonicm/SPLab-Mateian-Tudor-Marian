@@ -3,42 +3,37 @@ package sp.lab.Models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book {
-    private String title;
+public class Book extends Section {
     private List<Author> authorList;
-    private List<Chapter> chapterList;
 
     public Book(String title) {
-        this.title = title;
+        super(title);
         this.authorList = new ArrayList<>();
-        this.chapterList = new ArrayList<>();
     }
 
     public void addAuthor(Author author) {
         this.authorList.add(author);
     }
 
-    public int createChapter(String chapterName) {
-        Chapter chapter = new Chapter(chapterName);
-        this.chapterList.add(chapter);
-        return this.chapterList.indexOf(chapter);
-    }
-
-    public Chapter getChapter(int index) {
-        return this.chapterList.get(index);
+    public void addContent(Element element) {
+        try {
+            super.add(element);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void print() {
-        System.out.println("Book: " + this.title);
-        
-        System.out.println("Authors:");
+        System.out.println("Book: " + this.getTitle() + '\n');
+
+        System.out.println("Authors: ");
         for (Author author : this.authorList) {
             author.print();
         }
 
-        System.out.println("Chapters:");
-        for (Chapter chapter : this.chapterList) {
-            chapter.print();
+        System.out.println("\nContent: ");
+        for (Element element : super.elementList) {
+            element.print();
         }
     }
 }

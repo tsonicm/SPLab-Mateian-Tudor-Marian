@@ -1,6 +1,6 @@
 package sp.lab.Models;
 
-public class Image implements IElement{
+public class Image extends Element{
     private String name;
 
     public Image(String name) {
@@ -9,9 +9,5 @@ public class Image implements IElement{
 
     public void print() {
         System.out.println("Image with name: " + this.name);
-    }
-
-    public int getIndex() {
-        return 2;
     }
 }

@@ -1,6 +1,6 @@
 package sp.lab.Models;
 
-public class Table implements IElement {
+public class Table extends Element{
     private String title;
 
     public Table(String title) {
@@ -9,9 +9,5 @@ public class Table implements IElement {
 
     public void print() {
         System.out.println("Table with title: " + this.title);
-    }
-
-    public int getIndex() {
-        return 3;
     }
 }
