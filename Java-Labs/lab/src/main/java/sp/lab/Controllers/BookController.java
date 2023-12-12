@@ -57,7 +57,7 @@ public class BookController {
 
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
-        scheduler.scheduleAtFixedRate(this::processRequests, 0, 10, TimeUnit.SECONDS)
+        scheduler.scheduleAtFixedRate(this::processRequests, 0, 10, TimeUnit.SECONDS);
     }
 
     @GetMapping("/requests/{id}")
