@@ -3,8 +3,10 @@ package sp.lab.Services;
 import java.util.ArrayList;
 import java.util.List;
 
-import sp.lab.Models.Book;
+import org.springframework.stereotype.Component;
 
+import sp.lab.Models.Book;
+@Component
 public class BookService implements IBookService{
     List<Book> books = new ArrayList<>();
 
